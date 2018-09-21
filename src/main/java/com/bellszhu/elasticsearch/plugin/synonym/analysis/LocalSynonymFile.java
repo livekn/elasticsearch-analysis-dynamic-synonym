@@ -12,8 +12,6 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.synonym.SolrSynonymParser;
 import org.apache.lucene.analysis.synonym.SynonymMap;
 import org.apache.lucene.analysis.synonym.WordnetSynonymParser;
-import org.elasticsearch.common.io.FastStringReader;
-import org.elasticsearch.common.io.FileSystemUtils;
 import org.elasticsearch.common.logging.ESLoggerFactory;
 import org.elasticsearch.env.Environment;
 
@@ -89,7 +87,7 @@ public class LocalSynonymFile implements SynonymFile {
 				logger.info("reload local synonym: {}", line);
 				sb.append(line).append(System.getProperty("line.separator"));
 			}
-			reader = new FastStringReader(sb.toString());
+			reader = new StringReader(sb.toString());
 
 		} catch (IOException e) {
 			logger.error("get local synonym reader {} error!", e, location);
