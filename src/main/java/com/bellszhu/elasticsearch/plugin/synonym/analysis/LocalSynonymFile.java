@@ -12,8 +12,7 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.synonym.SolrSynonymParser;
 import org.apache.lucene.analysis.synonym.SynonymMap;
 import org.apache.lucene.analysis.synonym.WordnetSynonymParser;
-import org.elasticsearch.common.logging.ESLoggerFactory;
-import org.elasticsearch.env.Environment;
+import org.apache.logging.log4j.LogManager;import org.elasticsearch.env.Environment;
 
 
 /**
@@ -22,7 +21,7 @@ import org.elasticsearch.env.Environment;
  */
 public class LocalSynonymFile implements SynonymFile {
 
-	public static Logger logger = ESLoggerFactory.getLogger("dynamic-synonym");
+	public static Logger logger = LogManager.getLogger("dynamic-synonym");
 
 	private String format;
 
